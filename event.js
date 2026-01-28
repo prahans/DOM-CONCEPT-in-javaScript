@@ -67,3 +67,32 @@ form.addEventListener("submit", function (event) {
 
   alert(`Hi ${user.value}, your password is set to '${pass.value}'`);
 });
+
+let change = document.querySelector("#change");
+let text = document.querySelector("#inp");
+
+change.addEventListener("change", function(event){
+  event.preventDefault();
+  console.log(this.value);
+})
+text.addEventListener("input", function(event){
+  event.preventDefault();
+  console.log(this.value);
+})
+
+let body = document.querySelector("body");
+let newbtn = document.createElement("button");
+newbtn.innerText = "Click me!";
+body.append(newbtn);
+newbtn.addEventListener("click", function(){
+  this.style.backgroundColor = "green";
+})
+
+let h2 = document.createElement("h2");
+let inpUser = document.createElement("input");
+inpUser.setAttribute("placeholder", "enter your name");
+body.append(h2);
+body.append(inpUser);
+inpUser.addEventListener("input", function(){
+  h2.innerText = this.value;
+})

@@ -110,7 +110,6 @@ body.append(btn2);
 
 inp.setAttribute("placeholder", "username");
 btn2.setAttribute("id", "btn");
-console.log(btn2.getAttribute("id"));
 let button = document.querySelector("#btn");
 button.style.backgroundColor = "black";
 button.style.color = "white";
