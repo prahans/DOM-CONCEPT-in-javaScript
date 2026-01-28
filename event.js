@@ -117,3 +117,36 @@ for (li of lis) {
     console.log("li is clicked");
   });
 }
+
+//todo app
+let todoBtn = document.querySelector("#todo-add-button");
+let todoInput = document.querySelector("#todo-input");
+let todoUl = document.querySelector("#todo-ul");
+
+todoBtn.addEventListener("click", function () {
+  let item = document.createElement("li");
+  item.innerText = todoInput.value;
+  let delBtn = document.createElement("button");
+  delBtn.innerText = "delete";
+  delBtn.classList.add("delete");
+
+  item.append(delBtn);
+  todoUl.appendChild(item);
+  todoInput.value = "";
+});
+
+//event delegation
+todoUl.addEventListener("click", function (event) {
+  if (event.target.nodeName == "BUTTON") {
+    let listItem = event.target.parentElement;
+    listItem.remove();
+  }
+});
+
+// let delBtns = document.querySelectorAll(".delete");
+// for (delBtn of delBtns) {
+//   delBtn.addEventListener("click", function () {
+//     let parent = this.parentElement;
+//     parent.remove();
+//   });
+// }

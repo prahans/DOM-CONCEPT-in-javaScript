@@ -1,8 +1,8 @@
-* {
+/* * {
   margin: auto;
   text-align: center;
   margin-top: 20px;
-}
+} */
 button {
   height: 35px;
 }
@@ -23,4 +23,10 @@ div {
 }
 .lib {
   background-color: greenyellow;
+}
+#todo-add-button {
+  height: auto;
+}
+.delete {
+  height: auto;
 }
