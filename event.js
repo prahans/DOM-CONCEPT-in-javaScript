@@ -71,28 +71,49 @@ form.addEventListener("submit", function (event) {
 let change = document.querySelector("#change");
 let text = document.querySelector("#inp");
 
-change.addEventListener("change", function(event){
+change.addEventListener("change", function (event) {
   event.preventDefault();
   console.log(this.value);
-})
-text.addEventListener("input", function(event){
+});
+text.addEventListener("input", function (event) {
   event.preventDefault();
   console.log(this.value);
-})
+});
 
 let body = document.querySelector("body");
 let newbtn = document.createElement("button");
 newbtn.innerText = "Click me!";
-body.append(newbtn);
-newbtn.addEventListener("click", function(){
+body.prepend(newbtn);
+newbtn.addEventListener("click", function () {
   this.style.backgroundColor = "green";
-})
+});
 
 let h2 = document.createElement("h2");
 let inpUser = document.createElement("input");
 inpUser.setAttribute("placeholder", "enter your name");
-body.append(h2);
-body.append(inpUser);
-inpUser.addEventListener("input", function(){
+body.prepend(h2);
+body.prepend(inpUser);
+inpUser.addEventListener("input", function () {
   h2.innerText = this.value;
-})
+});
+
+//events bubbling
+let div = document.querySelector("#db");
+let ul = document.querySelector("#ulb");
+let lis = document.querySelectorAll(".lib");
+
+div.addEventListener("click", function () {
+  console.log("div is clicked");
+});
+
+ul.addEventListener("click", function (event) {
+  event.stopPropagation();
+  console.log("ul is clicked");
+});
+
+for (li of lis) {
+  li.addEventListener("click", function (event) {
+    event.stopPropagation();
+    console.log("li is clicked");
+  });
+}

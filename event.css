@@ -12,3 +12,15 @@ div {
   width: 500px;
   text-align: center;
 }
+
+#db {
+  background-color: pink;
+  height: 200px;
+  width: 400px;
+}
+#ulb {
+  background-color: blue;
+}
+.lib {
+  background-color: greenyellow;
+}
