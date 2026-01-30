@@ -120,3 +120,11 @@ heading.classList.add("purple", "underline");
 let p = document.createElement("p");
 p.innerHTML = "Apna College <b>Delta</b> Practice";
 newP.insertAdjacentElement("beforebegin", p);
+
+
+function greet(name="your name here"){
+    console.log("hello ", name);
+}
+
+greet("prahans");
+greet();
